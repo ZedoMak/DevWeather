@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevWeather · Weather for coders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with search -->
+        <header>
+            <h1 class="logo">{🌤️ DevWeather}</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+            </div>
+        </header>
+
+        <!-- Main weather card -->
+        <main>
+            <div class="weather-card" id="weatherCard">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Fetching weather data...</p>
+                </div>
+                
+                <div class="weather-content hidden" id="weatherContent">
+                    <div class="location-section">
+                        <h2 id="cityName">--</h2>
+                        <p class="date" id="currentDate"></p>
+                    </div>
+                    
+                    <div class="weather-main">
+                        <div class="temp-section">
+                            <span class="temperature" id="temperature">--°C</span>
+                            <span class="feels-like" id="feelsLike">Feels like --°C</span>
+                        </div>
+                        <div class="weather-icon">
+                            <span id="weatherEmoji">☀️</span>
+                            <span id="weatherDesc">--</span>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span>💧 Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>🌬️ Wind</span>
+                            <span id="windSpeed">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>📊 Pressure</span>
+                            <span id="pressure">-- hPa</span>
+                        </div>
+                    </div>
+
+                    <!-- Developer corner -->
+                    <div class="dev-corner" id="devCorner">
+                        <h3>👨‍💻 Developer suggestion</h3>
+                        <p id="devSuggestion"></p>
+                    </div>
+                </div>
+
+                <div class="error hidden" id="error">
+                    <span>⚠️</span>
+                    <p id="errorMessage">City not found</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Recently searched -->
+        <section class="recent-section">
+            <h3>Recent searches</h3>
+            <div class="recent-list" id="recentList"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
